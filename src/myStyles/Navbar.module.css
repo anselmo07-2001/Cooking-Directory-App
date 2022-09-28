@@ -1,0 +1,54 @@
+.myNavbar{
+    background-color: #6743cc;
+    padding:1rem 0;
+}
+
+.myNavbar_collapse {
+    flex-grow: 0 !important;
+}
+
+
+.myNavbar_toggler{
+    border: 1px solid white;
+    width: 47px;
+    height: 34px;
+    background: #6743cc;
+    border-radius: 5px;
+    display: none;
+}
+
+.line{
+    width: 100%;
+    float: left;
+    height: 1.5px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 767px) {
+    .myNavLink {
+        margin-top: 1rem;
+    }
+
+    .myNavbar_toggler{
+        display: block;
+    }
+}
+
+
+@media (max-width: 435px) {
+
+    .myNavLink {
+        position: relative;
+        padding-bottom: 3.7rem;
+    }
+
+
+    .myBtn_createRecipe {
+        position:absolute;
+        top:3.5rem;
+        left:0
+    }
+
+}
