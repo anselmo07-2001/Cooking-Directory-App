@@ -15,11 +15,11 @@ const AddRecipeForm = () => {
 
                             <div className={style.inputGroup}>
                                 <label>Recipe Ingredient:</label>
-                                <div className="d-flex gap-2 mb-2">
+                                <div className="d-flex gap-2 mb-2 align-items-center">
                                     <input type="text"/>
-                                    <button>add</button>
+                                    <button className={style.formButton}>Add</button>
                                 </div>
-                                <div class="text-secondary">Current Ingredient</div>
+                                <div class="text-secondary">Current Ingredient:</div>
                             </div>
 
 
@@ -33,7 +33,7 @@ const AddRecipeForm = () => {
                                 <input type="text"/>
                             </div>
 
-                            <button>submit</button>
+                            <button className={style.formButton}>Submit</button>
                       </div>
                 
                  </form>

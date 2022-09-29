@@ -20,9 +20,12 @@ form {
     border-radius: 3px;
     height:1.9rem;
 }
+textarea {
+    height:3rem;
+}
 
 .inputGroup {
-    width: 60%;
+    width: 70%;
 }
 
 .formBody {
@@ -30,4 +33,16 @@ form {
     flex-direction: column;
     align-items: center;
     gap:1.2rem;
+}
+
+.formButton {
+    border: none;
+    background: #6743cc;
+    color: white;
+    padding: 0.2rem 1.2rem;
+    border-radius: 3px;
+}
+
+.formButton:hover {
+    background: #5431b4;
 }
