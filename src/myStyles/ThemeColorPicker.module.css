@@ -1,0 +1,28 @@
+.colorPicker {
+    width: 5.5rem;
+    display: flex;
+    justify-content: center;
+    gap:0.5rem;
+}
+
+.colorPurple,
+.colorGreen,
+.colorRed {
+    width:1.2rem;
+    height:1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.colorPurple {
+    background-color: #6743cc;
+}
+
+.colorGreen {
+    background-color:rgb(13 165 13 / 92%);
+}
+
+.colorRed {
+    background-color:rgb(199 10 10 / 92%);
+}
