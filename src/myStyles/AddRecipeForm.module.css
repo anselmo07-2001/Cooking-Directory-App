@@ -1,0 +1,33 @@
+.formContainer {
+    max-width: 50rem;
+    margin:0 auto;
+}
+
+form {
+    padding: 1.2rem;
+}
+
+.formContainer label {
+    color: #808080;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.formContainer input,textarea {
+    display:block;
+    width: 100%;
+    border:none;
+    border-radius: 3px;
+    height:1.9rem;
+}
+
+.inputGroup {
+    width: 60%;
+}
+
+.formBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1.2rem;
+}

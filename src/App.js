@@ -3,6 +3,7 @@ import MainContainer from "./components/MainContainer"
 import DetailRecipeCard from "./components/DetailRecipeCard"
 import ShortRecipeCard from "./components/ShortRecipeCard"
 import ThemeColorPicker from "./components/ThemeColorPicker"
+import AddRecipeForm from "./components/AddRecipeForm"
 
 import "./App.module.css"
 
@@ -14,6 +15,7 @@ function App() {
         <DetailRecipeCard/>
         <ShortRecipeCard/>
         <ThemeColorPicker/>
+        <AddRecipeForm/>
     </MainContainer>
     </>
   );
