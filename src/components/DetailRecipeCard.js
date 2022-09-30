@@ -1,6 +1,8 @@
+import style from "../myStyles/DetailRecipeCard.module.css"
+
 const DetailRecipeCard = () => {
     return (
-        <div className="container bg-white w-100 mt-4">
+        <div className={`${style.recipeCardContainer} bg-white mt-4`}>
             <div className="detailCardBody px-4 pt-5 pb-4 text-secondary">
                  <div className="text-center mb-3">
                     <h1 className="mb-4 text-dark">Greek Salad</h1>
