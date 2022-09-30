@@ -6,6 +6,7 @@ import DetailRecipeCard from "./components/DetailRecipeCard"
 import ShortRecipeCard from "./components/ShortRecipeCard"
 import ThemeColorPicker from "./components/ThemeColorPicker"
 import AddRecipeForm from "./components/AddRecipeForm"
+import Home from "./pages/Home"
 
 
 import "./App.module.css"
@@ -16,7 +17,7 @@ function App() {
        <BrowserRouter>
           <NavBar/>
           <Routes>
-               <Route path="/" element={<h1>Hello</h1>}/>
+               <Route path="/" element={<Home/>}/>
                <Route path="/addRecipe" element={<AddRecipeForm/>}/>
           </Routes>
        </BrowserRouter>

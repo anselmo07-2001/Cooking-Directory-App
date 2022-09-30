@@ -1,6 +1,7 @@
 .myNavbar{
     background-color: #6743cc;
-    padding:2rem 0;
+    padding:1rem !important;
+    margin-bottom: 1.3rem;
 }
 
 .myNavbar_collapse {
@@ -37,7 +38,7 @@
 }
 
 
-@media (max-width: 435px) {
+@media (max-width: 467px) {
 
     .myNavLink {
         position: relative;

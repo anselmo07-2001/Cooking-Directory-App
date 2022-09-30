@@ -32,6 +32,10 @@
 
 .cookingDesc {
     margin-bottom: 1.2rem;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 
 .cardBtn {

@@ -8,7 +8,7 @@ const NavBar = () => {
    return (
        <nav className={`navbar navbar-expand-md navbar-dark ${style.myNavbar}`}>
            <div className="container">
-                <Link to="/" ><h1 className="navbar-brand text-white fs-5 fw-bolder myNav-logo mb-0">Cooking Mama</h1></Link>
+                <Link to="/" ><h1 className="navbar-brand text-white fs-3 fw-bolder myNav-logo mb-0">Cooking Directory</h1></Link>
                 <button className={style.myNavbar_toggler}
                         data-bs-toggle="collapse"
                         data-bs-target="#nav"
