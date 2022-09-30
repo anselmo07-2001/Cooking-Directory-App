@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom"
+
 import style from "../myStyles/Navbar.module.css"
+
 
 const NavBar = () => {
    console.log(style)
    return (
        <nav className={`navbar navbar-expand-md navbar-dark ${style.myNavbar}`}>
            <div className="container">
-                <h1 className="navbar-brand text-white fs-5 fw-bolder myNav-logo mb-0">Cooking Mama</h1>
+                <Link to="/" ><h1 className="navbar-brand text-white fs-5 fw-bolder myNav-logo mb-0">Cooking Mama</h1></Link>
                 <button className={style.myNavbar_toggler}
                         data-bs-toggle="collapse"
                         data-bs-target="#nav"
@@ -21,7 +24,7 @@ const NavBar = () => {
                             <label className="form-label text-white mb-0" htmlFor="search">Search:</label>
                             <input type="text" className="form-control" id="search"/>
                         </div>
-                        <button className={`${style.myBtn_createRecipe} btn btn-outline-light`}>Create Recipe</button>
+                        <Link to="/addRecipe" className={`${style.myBtn_createRecipe} btn btn-outline-light`}>Create Recipe</Link>
                     </div>
                 </div>
            </div>
