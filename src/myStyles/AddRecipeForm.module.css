@@ -46,3 +46,27 @@ textarea {
 .formButton:hover {
     background: #5431b4;
 }
+
+.currentIng {
+    word-break: break-word;
+}
+
+.ingredient {
+    position: relative;
+    margin-right:1rem;
+}
+
+.ingredient::after {
+    content: "X";
+    font-size:8px;
+    font-weight: light;
+    position: absolute;
+    top: 0;
+    right: -8px;
+    cursor: pointer;
+}
+
+.ingredient:hover::after {
+    font-weight: bold;
+    font-size:10px;
+}
