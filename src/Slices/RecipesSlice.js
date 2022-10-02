@@ -28,7 +28,7 @@ const RecipeSlice = createSlice(
         ],
         reducers: {
             createRecipe(state,payload) {
-                state.push(payload)
+                state.push(payload.payload)
             },
             readRecipe(state) {
                 return state

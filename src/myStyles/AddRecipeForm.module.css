@@ -70,3 +70,7 @@ textarea {
     font-weight: bold;
     font-size:10px;
 }
+
+.not_valid {
+    background-color: #f5281469;
+}
