@@ -25,6 +25,13 @@ const RecipeSlice = createSlice(
                 ingredient: ["Dog", "corn", "butter"],
                 description: "Qui excepteur minim id incididunt consectetur eu ex ex esse sint nulla cillum labore nostrud. Pariatur reprehenderit nulla dolore magna reprehenderit. Pariatur veniam id labore duis Qui excepteur minim id incididunt consectetur eu ex ex esse sint nulla cillum labore nostrud. Pariatur reprehenderit nulla dolore magna reprehenderit. Pariatur veniam id labore duis."
              },
+             {
+                id : 4,
+                foodName: "Corn Dog",
+                cookingTime: 15,
+                ingredient: ["Dog", "corn", "butter"],
+                description: "Qui excepteur minim id incididunt consectetur eu ex ex esse sint nulla cillum labore nostrud. Pariatur reprehenderit nulla dolore magna reprehenderit. Pariatur veniam id labore duis Qui excepteur minim id incididunt consectetur eu ex ex esse sint nulla cillum labore nostrud. Pariatur reprehenderit nulla dolore magna reprehenderit. Pariatur veniam id labore duis."
+             },
         ],
         reducers: {
             createRecipe(state,payload) {

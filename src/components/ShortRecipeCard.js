@@ -5,12 +5,13 @@ const ShortRecipeCard = (props) => {
 
     return (
         <div className={style.card}>
-            <div className="">
-                <h3 className={style.cardHeading}>{foodName}</h3>
-                <div className={style.cookingTime}>{cookingTime} minutes to make</div>
-                <div className={style.cookingDesc}>{description}
+            <div className="d-flex flex-column justify-content-between h-100">
+                <div>
+                    <h3 className={style.cardHeading}>{foodName}</h3>
+                    <div className={style.cookingTime}>{cookingTime} minutes to make</div>
+                    <div className={style.cookingDesc}>{description}</div>
                 </div>
-                <button className={style.cardBtn}>Cook this</button>
+                <button className={`${style.cardBtn}`}>Cook this</button>
             </div>
         </div>
     )
