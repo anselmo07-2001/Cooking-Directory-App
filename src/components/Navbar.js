@@ -1,15 +1,33 @@
 import { Link } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 import style from "../myStyles/Navbar.module.css"
 
 
+const selectedColorTheme = (colorTheme) => {
+    if (colorTheme === "purple") {
+        return style.bg_purple
+    }
+
+    if (colorTheme === "green") {
+        return style.bg_green
+    }
+
+    if (colorTheme === "red") {
+        return style.bg_red
+    }
+}
+
+
 const NavBar = () => {
-   console.log(style)
+   const colorTheme = useSelector((state) => state.colorTheme)
+
+
    return (
-       <nav className={`navbar navbar-expand-md navbar-dark ${style.myNavbar}`}>
+       <nav className={`navbar navbar-expand-md navbar-dark ${style.myNavbar} ${selectedColorTheme(colorTheme)}`}>
            <div className="container">
                 <Link to="/" ><h1 className="navbar-brand text-white fs-3 fw-bolder myNav-logo mb-0">Cooking Directory</h1></Link>
-                <button className={style.myNavbar_toggler}
+                <button className={`${style.myNavbar_toggler} ${selectedColorTheme(colorTheme)}`}
                         data-bs-toggle="collapse"
                         data-bs-target="#nav"
                         aria-controls="nav"

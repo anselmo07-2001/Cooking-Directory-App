@@ -1,7 +1,21 @@
+.bg_purple {
+    background-color:  #6743cc;
+}
+
+.bg_green {
+    background-color: rgb(13 165 13 / 92%);;
+}
+
+.bg_red {
+    background-color: rgb(199 10 10 / 92%);;
+}
+
+
+
 .myNavbar{
-    background-color: #6743cc;
     padding:1rem !important;
     margin-bottom: 1.3rem;
+    transition: background-color 0.4s;
 }
 
 .myNavbar_collapse {
@@ -13,9 +27,9 @@
     border: 1px solid white;
     width: 47px;
     height: 34px;
-    background: #6743cc;
     border-radius: 5px;
     display: none;
+    transition: background-color 0.4s;
 }
 
 .line{

@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import RecipesSlice from "../Slices/RecipesSlice";
+import ColorTheme from "../Slices/ColorTheme";
 
 const store = configureStore({
     reducer: {
-        recipe: RecipesSlice
+        recipe: RecipesSlice,
+        colorTheme : ColorTheme
     }
 })
 
