@@ -3,9 +3,11 @@ import { v4 as uuidv4} from "uuid"
 import style from "../myStyles/AddRecipeForm.module.css"
 import { RecipeActions } from "../Slices/RecipesSlice"
 import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
 
 const AddRecipeForm = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const [recipeTitle, setRecipeTitle] = useState("")
     const [recipeMethod, setRecipeMethod] = useState("")
@@ -67,6 +69,8 @@ const AddRecipeForm = () => {
             setRecipeIngredients("")
             setListIngredients([])
             setCurrentIngredients("")
+
+            navigate("/")
         }
 
     }

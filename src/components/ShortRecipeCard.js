@@ -1,7 +1,9 @@
 import style from "../myStyles/ShortRecipeCard.module.css"
+import { Link } from "react-router-dom"
+
 
 const ShortRecipeCard = (props) => {
-    const {foodName, cookingTime, description } = props.recipe
+    const {foodName, cookingTime, description, id} = props.recipe
 
     return (
         <div className={style.card}>
@@ -11,7 +13,7 @@ const ShortRecipeCard = (props) => {
                     <div className={style.cookingTime}>{cookingTime} minutes to make</div>
                     <div className={style.cookingDesc}>{description}</div>
                 </div>
-                <button className={`${style.cardBtn}`}>Cook this</button>
+                <Link to={`/recipe/${id}`}><button className={`${style.cardBtn}`}>Cook this</button></Link>
             </div>
         </div>
     )
