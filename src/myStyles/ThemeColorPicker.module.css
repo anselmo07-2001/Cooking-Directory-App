@@ -27,3 +27,7 @@
 .colorRed {
     background-color:rgb(199 10 10 / 92%);
 }
+
+.lightDarkToggleBtn {
+    cursor: pointer;
+}

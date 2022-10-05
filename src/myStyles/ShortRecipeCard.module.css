@@ -13,23 +13,45 @@
     transform: rotate(-3deg);
 }
 
-.cardHeading,
-.cookingDesc {
-    color:#808080;
+/* .cardHeading,
+.cookingDesc,
+.cardBtn {
+    color:hsl(0, 0%, 50%);
+} */
+
+.card_fc_lightBg {
+    color:hsl(0, 0%, 50%);
+}
+
+.card_fc_darkBg {
+    color:#fff;
+    background-color: #808080;
 }
 
 .cardHeading {
-    color:#808080;
     font-size:1.4rem;
     font-weight: bold;
     margin-bottom: 0.2rem;
 }
 
 .cookingTime {
-    color: #80808091;
     font-size: 1.1rem;
     margin-bottom: 1rem;
 }
+
+.sub_head_fc_dark,
+.sub_head_fc_light {
+    font-weight: lighter;
+}
+
+.sub_head_fc_dark {
+    color: #80808091;
+}
+
+.sub_head_fc_light {
+    color: #fff
+}
+
 
 .cookingDesc {
     margin-bottom: 1.2rem;
@@ -43,16 +65,31 @@
     border:none;
     background-color:#80808045;
     border-radius: 3px;
-    color:#808080;
     padding:0.3rem 1.2rem;
     display: block;
     margin: 0 auto;
     font-weight:500;
+    color:hsl(0, 0%, 50%);
+    font-weight:400;
 }
 
-.cardBtn:hover {
-    background-color:#6c6c6c5a;
+.cardBtn_LightTheme {
+    background-color: white; 
 }
+.cardBtn_LightTheme:hover {
+    background-color:rgb(160, 160, 160);
+    color:white;
+}
+
+
+.cardBtn_darkTheme {
+    background-color: #80808045;
+}
+.cardBtn_darkTheme:hover {
+    background-color: #acacac45;
+}
+
+
 
 
 @media (max-width:75rem) {

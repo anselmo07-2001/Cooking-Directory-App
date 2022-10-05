@@ -2,10 +2,20 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const ColorTheme = createSlice({
     name: "colorTheme",
-    initialState: "purple",
+    initialState: {
+        navbarTheme : "purple",
+        mainTheme : "light"
+    },
     reducers: {
-        changeColorTheme(state,payload) {
-           return state.replace(state, payload.payload)
+        changeNavColorTheme(state,payload) {
+           return {
+              ...state, navbarTheme : payload.payload
+           }
+        },
+        changeLightDarkTheme(state,payload) {
+            return {
+                ...state, mainTheme : payload.payload
+            }
         }
     }
 })

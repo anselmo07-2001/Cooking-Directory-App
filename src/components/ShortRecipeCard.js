@@ -1,19 +1,44 @@
+import { useSelector } from "react-redux"
+
 import style from "../myStyles/ShortRecipeCard.module.css"
 import { Link } from "react-router-dom"
 
 
+
+const getCurrentFontColorTheme = (currentDarkLightThemeValue) => {
+    if (currentDarkLightThemeValue === "light") {
+        return style.card_fc_lightBg
+    }
+
+    if (currentDarkLightThemeValue === "dark") {
+        return style.card_fc_darkBg
+    }
+}
+
+
+
 const ShortRecipeCard = (props) => {
     const {foodName, cookingTime, description, id} = props.recipe
+    const currentDarkLightThemeValue = useSelector(state => state.colorTheme.mainTheme)
 
     return (
-        <div className={style.card}>
+        <div className={`${style.card} ${getCurrentFontColorTheme(currentDarkLightThemeValue)}`}>
             <div className="d-flex flex-column justify-content-between h-100">
                 <div>
                     <h3 className={style.cardHeading}>{foodName}</h3>
-                    <div className={style.cookingTime}>{cookingTime} minutes to make</div>
+                    <div className={
+                            `${style.cookingTime}
+                             ${currentDarkLightThemeValue === "light" ? style.sub_head_fc_dark : style.sub_head_fc_light}
+                            `
+                        }>{cookingTime} minutes to make</div>
                     <div className={style.cookingDesc}>{description}</div>
                 </div>
-                <Link to={`/recipe/${id}`}><button className={`${style.cardBtn}`}>Cook this</button></Link>
+                <Link to={`/recipe/${id}`}>
+                     <button className={`${style.cardBtn}
+                                         ${currentDarkLightThemeValue === "light" ? style.cardBtn_darkTheme : style.cardBtn_LightTheme}
+                                        `
+                        }>Cook this</button>
+                </Link>
             </div>
         </div>
     )

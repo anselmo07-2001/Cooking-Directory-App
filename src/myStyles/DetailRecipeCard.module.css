@@ -2,3 +2,11 @@
     max-width: 70rem;
     margin: 0 auto;
 }
+
+.bgLight {
+    background-color: white;
+}
+
+.bgDark {
+    background-color: #808080;;
+}

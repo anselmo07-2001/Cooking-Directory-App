@@ -1,7 +1,23 @@
 body {  
-    background-color:rgb(121 120 120 / 25%) !important;
+    /* background-color:rgb(121 120 120 / 25%) !important; */
 }
 
 a {
     text-decoration: none !important;
+}  
+
+
+.mainWrapper {
+    height: 100vh;
+    transition: background-color 0.3s;
 }
+
+.light_theme {
+    background-color:rgb(121 120 120 / 25%) !important;
+}
+
+.dark_theme {
+    background-color:#2e2e2e;
+}
+
+
