@@ -17,7 +17,7 @@ const renderDetailRecipeCard = (recipeItems, recipeId, currentDarkLightThemeValu
                 <div className={`${switchLightDarkTheme()} detailCardBody px-4 pt-5 pb-4 text-secondary`}>
                     <div className="text-center mb-3">
                         <h1 className='mb-4'>{recipeItem.foodName}</h1>
-                        <div> minute to cook</div>
+                        <div>{recipeItem.cookingTime} minute to cook</div>
                         <div>{recipeItem.ingredient.map(ing => ing.recipeIng).join(", ")}</div>
                     </div>
                     <div>{recipeItem.description}</div>

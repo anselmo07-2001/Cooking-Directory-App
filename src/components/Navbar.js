@@ -41,7 +41,6 @@ const NavBar = () => {
                 return recipe
             }
         })
-        console.log(searchRecipes)
 
         dispatch(SearchRecipeAction.renderSearchRecipe(searchRecipes))         
    },[inputSearch])

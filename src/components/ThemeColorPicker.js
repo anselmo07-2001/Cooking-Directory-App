@@ -3,7 +3,7 @@ import { useSelector } from "react-redux/es/exports"
 
 import { ColorThemeAction } from "../Slices/ColorTheme"
 import style from "../myStyles/ThemeColorPicker.module.css"
-import lightDarkToggleBtn from "../assets/Dark-theme-svgrepo-com.svg"
+
 
 
 

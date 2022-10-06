@@ -34,11 +34,14 @@ const RecipeSlice = createSlice(
              },
         ],
         reducers: {
-            createRecipe(state,payload) {
-                state.push(payload.payload)
+            createRecipe(state,action) {
+                state.push(action.payload)
             },
             readRecipe(state) {
                 return state
+            },
+            deleteRecipe(state, action) {
+                return state.filter(state => state.id !== action.payload)
             }
         }
     }

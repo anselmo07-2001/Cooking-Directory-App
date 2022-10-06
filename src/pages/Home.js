@@ -5,8 +5,8 @@ import ShortRecipeCard from "../components/ShortRecipeCard"
 
 const renderRecipeCard = (recipes,searchRecipe) => {
 
+    //When search bar is empty string, then render all the recipes
     if (searchRecipe.inputtedSearch !== "") {
-        console.log("hit")
         return searchRecipe.resultSearch.map(recipe => {
             return (
                <div className="col-md-4 col-sm-6 g-4">

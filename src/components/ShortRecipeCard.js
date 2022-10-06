@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 
 import style from "../myStyles/ShortRecipeCard.module.css"
 import { Link } from "react-router-dom"
+import { RecipeActions } from "../Slices/RecipesSlice"
 
 
 
@@ -17,14 +19,23 @@ const getCurrentFontColorTheme = (currentDarkLightThemeValue) => {
 
 
 
+
+
 const ShortRecipeCard = (props) => {
     const {foodName, cookingTime, description, id} = props.recipe
     const currentDarkLightThemeValue = useSelector(state => state.colorTheme.mainTheme)
+    const dispatch = useDispatch()
+
+    const handleRemoveCard = () => {
+        dispatch(RecipeActions.deleteRecipe(id))
+    }
+
 
     return (
         <div className={`${style.card} ${getCurrentFontColorTheme(currentDarkLightThemeValue)}`}>
-            <div className="d-flex flex-column justify-content-between h-100">
+            <div className='d-flex flex-column justify-content-between h-100'>
                 <div>
+                    <div className={style.removeBtn} onClick={handleRemoveCard}>X</div>
                     <h3 className={style.cardHeading}>{foodName}</h3>
                     <div className={
                             `${style.cookingTime}
