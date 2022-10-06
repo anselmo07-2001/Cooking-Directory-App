@@ -9,13 +9,17 @@
     position: relative;
 }
 
-.removeBtn {
+
+.operations {
+    position: absolute;
     position: absolute;
     top: 4.2px;
     right: 10px;
+}
+
+.removeBtn {
     font-weight: 500;
     cursor: pointer;
-
     transition: all 0.2s;
 }
 

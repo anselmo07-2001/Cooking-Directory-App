@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
+import { AiFillEdit } from "react-icons/ai"
 
 import style from "../myStyles/ShortRecipeCard.module.css"
 import { Link } from "react-router-dom"
@@ -30,13 +31,23 @@ const ShortRecipeCard = (props) => {
         dispatch(RecipeActions.deleteRecipe(id))
     }
 
+    const handleEditRecipeCard = () => {
+        
+    }
+
 
     return (
         <div className={`${style.card} ${getCurrentFontColorTheme(currentDarkLightThemeValue)}`}>
             <div className='d-flex flex-column justify-content-between h-100'>
                 <div>
-                    <div className={style.removeBtn} onClick={handleRemoveCard}>X</div>
-                    <h3 className={style.cardHeading}>{foodName}</h3>
+                    <div className={`${style.operations} d-flex align-items-center gap-3`}>
+                        <div onClick={handleEditRecipeCard} 
+                             className="d-flex justify-content-center align-items-center">
+                                  <AiFillEdit size={"1rem"}/>
+                        </div>
+                        <div className={style.removeBtn} onClick={handleRemoveCard}>X</div>
+                    </div>
+                    <h3 className={`${style.cardHeading} mt-2`}>{foodName}</h3>
                     <div className={
                             `${style.cookingTime}
                              ${currentDarkLightThemeValue === "light" ? style.sub_head_fc_dark : style.sub_head_fc_light}
