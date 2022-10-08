@@ -1,10 +1,12 @@
-import { useSelector } from "react-redux"
-import { useDispatch } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import { useState } from "react"
 import { AiFillEdit } from "react-icons/ai"
+import { Link } from "react-router-dom"
 
 import style from "../myStyles/ShortRecipeCard.module.css"
-import { Link } from "react-router-dom"
+import EditRecipeCardModal from "./EditRecipeCardModal"
 import { RecipeActions } from "../Slices/RecipesSlice"
+
 
 
 
@@ -26,14 +28,17 @@ const ShortRecipeCard = (props) => {
     const {foodName, cookingTime, description, id} = props.recipe
     const currentDarkLightThemeValue = useSelector(state => state.colorTheme.mainTheme)
     const dispatch = useDispatch()
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false)
 
     const handleRemoveCard = () => {
         dispatch(RecipeActions.deleteRecipe(id))
     }
 
     const handleEditRecipeCard = () => {
-        
+        setIsEditModalOpen(!isEditModalOpen)
     }
+
+    
 
 
     return (
@@ -42,8 +47,9 @@ const ShortRecipeCard = (props) => {
                 <div>
                     <div className={`${style.operations} d-flex align-items-center gap-3`}>
                         <div onClick={handleEditRecipeCard} 
-                             className="d-flex justify-content-center align-items-center">
-                                  <AiFillEdit size={"1rem"}/>
+                             className="d-flex justify-content-center align-items-center"
+                             style={{paddingTop:"1.5px"}}>
+                                  <AiFillEdit size={"1rem"} style={{cursor:"pointer"}}/>
                         </div>
                         <div className={style.removeBtn} onClick={handleRemoveCard}>X</div>
                     </div>
@@ -62,6 +68,8 @@ const ShortRecipeCard = (props) => {
                         }>Cook this</button>
                 </Link>
             </div>
+
+            {isEditModalOpen ? <EditRecipeCardModal setIsEditModalOpen={setIsEditModalOpen} recipeId={id}/> : ""}
         </div>
     )
 }

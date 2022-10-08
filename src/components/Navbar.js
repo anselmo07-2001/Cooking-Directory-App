@@ -26,6 +26,7 @@ const selectedColorTheme = (colorTheme) => {
 
 const NavBar = () => {
    const { navbarTheme } = useSelector((state) => state.colorTheme)
+
    const recipes = useSelector(state => state.recipe)
    const [inputSearch, setInputSearch] = useState("")
    const dispatch = useDispatch()

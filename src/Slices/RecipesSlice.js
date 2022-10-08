@@ -15,7 +15,7 @@ const RecipeSlice = createSlice(
                 id : "2",
                 foodName: "Pizza Pie",
                 cookingTime: 25,
-                ingredient: [{id : 1, recipeIng : "banana" }, {id : 2, recipeIng : "soup" }, {id : 3, recipeIng : "before" },],
+                ingredient: [{id : 1, recipeIng : "banana" }, {id : 2, recipeIng : "soup" }],
                 description: "Qui excepteur minim id incididunt consectetur eu ex ex esse sint nulla cillum labore nostrud. Pariatur reprehenderit nulla dolore magna reprehenderit. Pariatur veniam id labore duis."
              },
              {
@@ -42,6 +42,14 @@ const RecipeSlice = createSlice(
             },
             deleteRecipe(state, action) {
                 return state.filter(state => state.id !== action.payload)
+            },
+            updateRecipe(state, action) {
+                return state.map(state => {
+                     if (state.id === action.payload.id ) {
+                        return action.payload
+                     }
+                     return state
+                })
             }
         }
     }
