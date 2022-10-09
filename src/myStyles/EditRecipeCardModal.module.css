@@ -87,25 +87,28 @@
 }
 
 .input {
-    max-width:80%;
+    max-width:100%;
     border:none;
     flex-grow: 1;
     border-radius: 3px;
 }
 
+.ingredientItem {
+    width: 50%;
+}
+
 
 .inputGroup {
     margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap:1rem;
 }
 
 .editBtn {
     border:none;
     color:#fff;
     border:1.5px solid #fff;
-    padding:0.2rem 0.5rem;
     transition: all 0.2s;
     font-weight: 600;
 }
@@ -120,6 +123,16 @@
     padding:0.2rem 0.5rem;
 }
 
+.saveBtn {
+    font-size: 1.4rem;
+    padding: 0.2rem 1.4rem;
+}
+
+.addIngBtn {
+    font-size: 1rem !important;
+    padding: 0.2rem 0.4rem
+}
+
 .saveEditBtn {
     position: absolute;
     top:88%;
@@ -129,4 +142,67 @@
 
 .not_valid {
     background-color:#fe46349c;
+}
+
+/* Below 700px */
+@media (max-width: 43.75rem) {
+    .inputGroup {
+        margin-bottom: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:0.2rem
+    }
+
+    .hideModal {
+        font-size: 1.2rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .addIngBtn {
+        font-size: 0.8rem !important;
+        padding: 0.2rem 0.3rem;
+    }
+    .saveBtn {
+        font-size: 1.1rem;
+        padding: 0.1rem 1.2rem;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+
+    .input, .textarea {
+        font-size: 0.9rem;
+    }
+
+
+
+
+
+}
+
+/* Below 500px */
+@media (max-width: 31.25rem) {
+    .ingredientItem {
+        width: 70%;
+    }
+
+    .formContainer {
+        width: 90%;
+    }
+
+    .formEdit {
+        padding:1rem 1.5rem;
+    }
+
+    .hideModal {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+        top: -1.2rem;
+        right: -0.9rem;
+    }
+
+    .label {
+        font-size: 0.9rem;
+    }
 }

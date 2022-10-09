@@ -40,7 +40,7 @@ const renderListIngredients = (ingredients,setInputIngredient) => {
     return ingredients.map((ing => {
         return (
            <li key={ing.id}>
-               <div className="d-flex w-50 gap-2">
+               <div className={`d-flex gap-2 ${style.ingredientItem}`}>
                    <input type="text" 
                           className={`${style.input} ${isInputNotValid(ing?.isError)}`}
                           style={{marginLeft: "0.4rem"}}
@@ -180,8 +180,11 @@ const EditRecipeCardModal = ({setIsEditModalOpen, recipeId}) => {
                             </ol>
 
 
-                            <div style={{paddingLeft:"2rem"}}>
-                                <button className={`${style.editBtn} ${getCurrentTheme(navbarTheme)}`} onClick={(e) => addAnotherIng(e, inputIngredient, setInputIngredient)}>Add more ingredient</button>
+                            <div>
+                                <button className={`${style.editBtn} ${getCurrentTheme(navbarTheme)} ${style.addIngBtn}`}
+                                        onClick={(e) => addAnotherIng(e, inputIngredient, setInputIngredient)}
+                                        style={{fontSize: "0.8rem"}}
+                                    >Add more ingredient</button>
                             </div>
                         </div>
 
@@ -189,14 +192,14 @@ const EditRecipeCardModal = ({setIsEditModalOpen, recipeId}) => {
                             <label htmlFor='recipeMethod' className={`${style.label} mb-2`}>Recipe Method</label>
                             <textarea rows="4" value={inputDescription} 
                                       onChange={(e) => setInputDescription(e.target.value)}
-                                      className={isInputNotValid(isInputDescriptionError)}/>
+                                      className={`${isInputNotValid(isInputDescriptionError)} ${style.textarea}`}/>
                         </div>
                 </div>
                 </form>
             </div>
 
             <div className={style.saveEditBtn}>
-                <button className={`${style.editBtn} ${getCurrentTheme(navbarTheme)} d-block mx-auto rounded-3 px-4 fs-4`}
+                <button className={`${style.editBtn} ${style.saveBtn} ${getCurrentTheme(navbarTheme)} d-block mx-auto rounded-3`}
                         onClick={handleSaveEdit}
                     >Save</button>
             </div>
