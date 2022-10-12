@@ -170,7 +170,7 @@ const EditRecipeCardModal = ({setIsEditModalOpen, recipeId}) => {
 
                         <div className={style.inputGroup}>
                             <label htmlFor="cookingTime" className={style.label}>Time to cook</label>
-                            <input type="text" id="cookingTime" className={`${style.input} ${isInputNotValid(isInputCookingTimeError)}`} value={inputCookingTime} onChange={(e) => setInputCookingTime(e.target.value)}/>
+                            <input type="number" id="cookingTime" className={`${style.input} ${isInputNotValid(isInputCookingTimeError)}`} value={inputCookingTime} onChange={(e) => setInputCookingTime(e.target.value)}/>
                         </div>
 
                         <div className='mb-3'>
@@ -190,7 +190,7 @@ const EditRecipeCardModal = ({setIsEditModalOpen, recipeId}) => {
 
                         <div className="mb-3">
                             <label htmlFor='recipeMethod' className={`${style.label} mb-2`}>Recipe Method</label>
-                            <textarea rows="4" value={inputDescription} 
+                            <textarea style={{height : "65px"}} value={inputDescription}  
                                       onChange={(e) => setInputDescription(e.target.value)}
                                       className={`${isInputNotValid(isInputDescriptionError)} ${style.textarea}`}/>
                         </div>

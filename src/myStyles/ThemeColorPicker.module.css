@@ -30,4 +30,21 @@
 
 .lightDarkToggleBtn {
     cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@media (max-width: 61.87rem) {
+
+    .colorPurple,
+    .colorGreen,
+    .colorRed {
+        width:0.9rem;
+        height:0.9rem;
+    }
+
+    .lightDarkToggleBtn {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
 }

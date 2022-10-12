@@ -8,16 +8,34 @@ import style from "../myStyles/AddRecipeForm.module.css"
 import { RecipeActions } from "../Slices/RecipesSlice"
 
 
-const switchDarkLightTheme = (currentDarkLightThemeValue) => {
-    return currentDarkLightThemeValue === "dark" ? "text-white" : ""
+const switchDarkLightTheme = (mainTheme) => {
+    return mainTheme === "dark" ? "text-white" : ""
 }
 
+const getCurrentTheme = (theme) => {
+    switch (theme) {
+        case "purple": 
+            return style.btn_purple
+        break;
+
+        case "green":
+            return style.btn_green
+        break;
+
+        case "red":
+            return style.btn_red
+        break;
+
+        default:
+            return ""
+    }
+}
 
 
 const AddRecipeForm = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const currentDarkLightThemeValue = useSelector(state => state.colorTheme.mainTheme)
+    const { mainTheme, navbarTheme}  = useSelector(state => state.colorTheme)
 
 
     const [recipeTitle, setRecipeTitle] = useState("")
@@ -64,15 +82,15 @@ const AddRecipeForm = () => {
 
 
         if (recipeTitle && listIngredients.length !== 0 && recipeMethod && cookingTime) {
-            
-
-            dispatch(RecipeActions.createRecipe( {
+            const newRecipe = {
                 id : uuidv4(),
                 foodName : recipeTitle,
                 cookingTime : cookingTime,
                 ingredient : listIngredients,
                 description : recipeMethod
-            }))
+            }
+             
+            dispatch(RecipeActions.createRecipe(newRecipe))
 
             setRecipeTitle("")
             setRecipeMethod("")
@@ -124,11 +142,11 @@ const AddRecipeForm = () => {
         <div className="container">
              <div className={style.formContainer}>
                  <form onSubmit={(e) => handleAddRecipe(e)}>
-                      <h2 className={`text-center mb-4 ${switchDarkLightTheme(currentDarkLightThemeValue)}`} >Add a new Recipe</h2>
+                      <h2 className={`text-center mb-4 ${switchDarkLightTheme(mainTheme)}`} >Add a new Recipe</h2>
 
                       <div className={style.formBody}>
                             <div className={style.inputGroup}>
-                                <label className={`${switchDarkLightTheme(currentDarkLightThemeValue)}`}>Recipe Title:</label>
+                                <label className={`${switchDarkLightTheme(mainTheme)}`}>Recipe Title:</label>
                                 <input type="text" 
                                        className={`${showError ? style.not_valid : ""}`}
                                        value={recipeTitle} 
@@ -136,32 +154,32 @@ const AddRecipeForm = () => {
                             </div>
 
                             <div className={style.inputGroup}>
-                                <label className={`${switchDarkLightTheme(currentDarkLightThemeValue)}`}>Recipe Ingredient:</label>
+                                <label className={`${switchDarkLightTheme(mainTheme)}`}>Recipe Ingredient:</label>
                                 <div className="d-flex gap-2 mb-2 align-items-center">
                                     <input type="text"  value={recipeIngredients} 
                                                         onChange={(e) => setRecipeIngredients(e.target.value)}
                                                         className={`${showErrorListIngredients ? style.not_valid : ""}`}/>
-                                    <button className={style.formButton} onClick={(e) => handleAddIngredients(e)}>Add</button>
+                                    <button className={`${style.formButton} ${getCurrentTheme(navbarTheme)}`} onClick={(e) => handleAddIngredients(e)}>Add</button>
                                 </div>
-                                <div class={`text-secondary ${style.currentIng} ${switchDarkLightTheme(currentDarkLightThemeValue)}`}>Current Ingredient: {currentIngredients}</div>
+                                <div class={`text-secondary ${style.currentIng} ${switchDarkLightTheme(mainTheme)}`}>Current Ingredient: {currentIngredients}</div>
                             </div>
 
 
                             <div className={style.inputGroup}>
-                                <label className={`${switchDarkLightTheme(currentDarkLightThemeValue)}`}>Recipe Method:</label>
+                                <label className={`${switchDarkLightTheme(mainTheme)}`}>Recipe Method:</label>
                                 <textarea type="text" value={recipeMethod} 
                                           onChange={(e) => setRecipeMethod(e.target.value)} 
                                           className={`${showErrorRecipeMethod ? style.not_valid : ""}`}/>
                             </div>
 
                             <div className={style.inputGroup}>
-                                <label className={`${switchDarkLightTheme(currentDarkLightThemeValue)}`}>Cooking time (minute) </label>
-                                <input type="text" value={cookingTime} 
+                                <label className={`${switchDarkLightTheme(mainTheme)}`}>Cooking time (minute) </label>
+                                <input type="number" value={cookingTime} 
                                       onChange={(e) => setCookingTime(e.target.value)}
                                       className={`${showErrorCookingTime ? style.not_valid : ""}`}/>
                             </div>
 
-                            <button className={style.formButton}>Submit</button>
+                            <button className={`${style.formButton} ${getCurrentTheme(navbarTheme)}`}>Submit</button>
                       </div>
                 
                  </form>

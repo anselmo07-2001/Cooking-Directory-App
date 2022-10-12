@@ -41,6 +41,19 @@ textarea {
     color: white;
     padding: 0.2rem 1.2rem;
     border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.btn_purple {
+    background-color: #6743cc;
+}
+
+.btn_green {
+    background-color:rgb(13 165 13 / 92%);
+}
+
+.btn_red {
+    background-color: rgb(199 10 10 / 92%);;
 }
 
 .formButton:hover {

@@ -42,7 +42,7 @@ const ThemeColorPicker = () => {
     return (
         <div className="container d-flex justify-content-around align-items-center" style={{padding: "0 1rem"}}>
             <div>
-                <svg className={style.lightDarkToggleBtn} width="24px" height="24px"
+                <svg className={style.lightDarkToggleBtn} 
                      viewBox="0 0 24 24" version="1.1" 
                      fill={currentDarkLightThemeValue === "light" ? "black" : "white" } 
                      onClick={() => handleClickToggleDarkLightTheme(dispatch, currentDarkLightThemeValue)}>
